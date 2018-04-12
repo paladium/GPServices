@@ -1,0 +1,39 @@
+﻿<Window x:Class="ProjectX.DataConverter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectX"
+        mc:Ignorable="d"
+        Title="DataConverter" Height="300" Width="300"
+        Icon="Logo.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Button Click="OpenFile">Open file</Button>
+            <Label Content="{Binding Path=Filename}"></Label>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Button Click="ProcessGp">Process gp services</Button>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <Button Click="ProcessSchools">Process schools</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <Button Click="ProcessDentists">Process dentists</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4">
+            <ProgressBar Height="10" Maximum="100" Minimum="0" Value="{Binding Path=Progress}"></ProgressBar>
+            <Button Click="SaveData">Save data</Button>
+        </StackPanel>
+    </Grid>
+</Window>
